@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('pets-3715733_640.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            min-height: 100vh;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #2f042e;
+            z-index: 200;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 100px auto 50px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Rest of your existing CSS remains the same */
+        .contact-form-container {
+            padding: 20px;
+        }
+
+        .contact-form-container h2 {
+            color: #2f042e;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #2f042e;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-group button {
+            background-color: #C4A484;
+            border: none;
+            color: #2f042e;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .form-group button:hover {
+            background-color: #a89074;
+        }
+
+        .cta-button {
+            background-color: #2f042e;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 20px;
+            display: block;
+            width: 100%;
+        }
+
+        .cta-button:hover {
+            background-color: #451a44;
+        }
+
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #C4A484;
+            color: #2f042e;
+            border: none;
+            border-radius: 50%;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 20px;
+            display: none;
+        }
+
+        .section__container {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .banner__container {
+            display: flex; 
+            gap: 2rem;
+            justify-content: space-between; 
+            margin-top: 10rem;
+        }
+
+        .banner__card {
+            flex: 1; 
+            padding: 1rem 2rem;
+            text-align: center;
+            background-color: wheat;
+            border-radius: 2rem;
+            box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+            margin: 0 1rem; 
+        }
+
+        @media (max-width: 768px) {
+            .banner__container {
+                flex-direction: column; 
+                align-items: center;
+                margin-top: 2rem;
+            }
+            
+            .banner__card {
+                margin: 1rem 0; 
+            }
+        }
+
+        .banner__card h4 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #451a44;
+        }
+
+        .banner__card p {
+            color: #2f042e;
+        }
+
+        .testimonials__grid {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            padding: 2rem;
+            display: grid;
+            gap: 1rem;
+            background-color: #C4A484;
+            border-radius: 5px;
+            box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .card i {
+            font-size: 2.5rem;
+            color: wheat;
+        }
+
+        .card p {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .card hr {
+            width: 40px;
+            margin: auto;
+            color: #2f042e;
+        }
+
+        .card img {
+            width: 60px;
+            height: 60px;
+            margin: auto;
+            border-radius: 100%;
+            border: 1px solid #2f042e;
+        }
+
+        .card .name {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: #451a44;
+            transition: 0.3s;
+        }
+
+        .card .name:hover {
+            color: #2f042e;
+        }
+
+        @media (width < 900px) {
+            .testimonials__grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+        }
+
+        @media (width < 600px) {
+            .testimonials__grid {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+
+        .phone-contact {
+            font-size: 18px;
+            color: #2f042e;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .phone-contact i {
+            margin-right: 8px;
+            color: #C4A484;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+   
+  
+    <section class="section__container banner__container">
+        <div class="banner__card">
+            <strong><h4>5K+</h4></strong>
+            <p>Pets Adopted</p>
+        </div>
+        <div class="banner__card">
+            <strong><h4>8+</h4></strong>
+            <p>Years of Service</p>
+        </div>
+        <div class="banner__card">
+            <strong><h4>4.9</h4></strong>
+            <p>Overall Ratings</p>
+        </div>
+    </section>
+    
+    
+    
+    <div class="container">
+        <div class="phone-contact">
+            <span><i class="ri-phone-fill"></i> +91-987654321</span>
+        </div>
+        
+        <div class="contact-form-container">
+            <h2>Get in Touch</h2>
+            <form id="contact-form" action="/contact" method="POST">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Send Message</button>
+                </div>
+            </form>
+            <button class="cta-button" onclick="window.location.href='/adopt';">Adopt Now</button>
+        </div>
+    </div>
+  
+  
+
+    <script>
+        document.querySelectorAll('nav a').forEach(anchor => {
+            const href = anchor.getAttribute('href');
+
+            if (href.startsWith('#')) {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            fetch('/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    message: document.getElementById('message').value
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message || 'Thank you for your message!');
+                this.reset();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was an error submitting your message.');
+            });
+        });
+    </script>
+</body>
+</html>
